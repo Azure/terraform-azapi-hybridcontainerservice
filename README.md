@@ -1,7 +1,7 @@
 This Terraform module deploys a Hybrid Kubernetescluster on ASZ using Hybrid Container Service and add support for adding node pool
 ## Usage in Terraform 1.2.0
 
-Note: Currently, ARB(Arc Resource Bridge) creation and vnet create can't be provisioned by portal, so we assume customer has a resource group, in the resource group it has pre-provisioned ARB and vnet. This module only create hybrid aks with exsiting ARB and vnet.
+***Note: Currently, ARB(Arc Resource Bridge) creation and vnet create can't be provisioned by portal, so we assume customer has a resource group, in the resource group it has pre-provisioned ARB and vnet. This module only create hybrid aks with exsiting ARB and vnet.***
 
 
 Please view folders in `examples`.
