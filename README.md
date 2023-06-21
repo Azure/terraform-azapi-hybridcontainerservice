@@ -1,3 +1,5 @@
+***Note: This project is in preview stage, the API might change 
+***
 This Terraform module deploys a Hybrid Kubernetescluster on ASZ using Hybrid Container Service and add support for adding node pool
 ## Usage in Terraform 1.2.0
 
@@ -123,7 +125,7 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 ## Document generation
 
 ```
-terraform-docs markdown table --output-file README.md --output-mode replace  --sort-by required .
+terraform-docs markdown table --output-file README.md --output-mode insert  --sort-by required .
 ```
 ## Module Spec
 
@@ -162,22 +164,22 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | (Required) The name of cluster | `string` | n/a | yes |
 | <a name="input_customLocation_id"></a> [customLocation\_id](#input\_customLocation\_id) | (Required) The name of the customer location that the resources for consul will run in | `string` | n/a | yes |
-| <a name="input_environment"></a> [environment](#input\_environment) | (Required) The environment of the site, possiblily value like: test/prod | `string` | n/a | yes |
 | <a name="input_public_key"></a> [public\_key](#input\_public\_key) | (Required) Base64 encoded public certificate used by the agent to do the initial handshake to the backend services in Azure. | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | (Required) The name of the resource group that the resources for consul will run in | `string` | n/a | yes |
-| <a name="input_site_name"></a> [site\_name](#input\_site\_name) | (Required) The name of the site | `string` | n/a | yes |
 | <a name="input_vnet_name"></a> [vnet\_name](#input\_vnet\_name) | (Required) The name of the vnet that the resources for consul will run in | `string` | n/a | yes |
 | <a name="input_admin_group_object_IDs"></a> [admin\_group\_object\_IDs](#input\_admin\_group\_object\_IDs) | (Optional) If you want to Use Azure AD for authentication and Kubernetes native RBAC for authorization, specify AAD group here. Assign Azure Active Directory groups that will have admin access within the cluster. Make sure you are part of the assigned groups to ensure cluster access after deployment regardless of if you are an Owner or a Contributor. | `list(string)` | `[]` | no |
 | <a name="input_controlplane_VM_size"></a> [controlplane\_VM\_size](#input\_controlplane\_VM\_size) | (Optional) VM sku of the control plane | `string` | `"Standard_A4_v2"` | no |
 | <a name="input_controlplane_count"></a> [controlplane\_count](#input\_controlplane\_count) | (Optional) VM count of the control plane | `number` | `1` | no |
 | <a name="input_default_agent_VM_size"></a> [default\_agent\_VM\_size](#input\_default\_agent\_VM\_size) | (Optional) VM sku of the default node pool | `string` | `"Standard_A4_v2"` | no |
 | <a name="input_default_agent_count"></a> [default\_agent\_count](#input\_default\_agent\_count) | (Optional) VM count of the default node pool | `number` | `1` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | (Optional) The environment of the site, possiblily value like: test/prod | `string` | `""` | no |
 | <a name="input_kubernetes_version"></a> [kubernetes\_version](#input\_kubernetes\_version) | (Optional) kubernates version of this hybrid aks | `string` | `"v1.22.11"` | no |
 | <a name="input_loadbalancer_VM_size"></a> [loadbalancer\_VM\_size](#input\_loadbalancer\_VM\_size) | (Optional) VM sku of the load balancer | `string` | `"Standard_K8S3_v1"` | no |
 | <a name="input_loadbalancer_count"></a> [loadbalancer\_count](#input\_loadbalancer\_count) | (Optional) VM count of the load balancer | `number` | `1` | no |
 | <a name="input_loadbalancer_sku"></a> [loadbalancer\_sku](#input\_loadbalancer\_sku) | (Optional) value | `string` | `"unstacked-haproxy"` | no |
 | <a name="input_network_policy"></a> [network\_policy](#input\_network\_policy) | (Optional) network cni of this hybrid aks | `string` | `"calico"` | no |
 | <a name="input_pod_cidr"></a> [pod\_cidr](#input\_pod\_cidr) | (Optional) CIDR of pods in this hybrid aks | `string` | `"10.245.0.0/16"` | no |
+| <a name="input_site_name"></a> [site\_name](#input\_site\_name) | (Optional) The name of the site | `string` | `""` | no |
 
 ## Outputs
 
