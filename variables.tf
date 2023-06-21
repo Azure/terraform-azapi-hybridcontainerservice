@@ -22,16 +22,6 @@ variable "vnet_name" {
   type        = string
 }
 
-variable "site_name" {
-  description = "(Required) The name of the site"
-  type        = string
-}
-
-variable "environment" {
-  description = "(Required) The environment of the site, possiblily value like: test/prod"
-  type        = string
-}
-
 variable "public_key" {
   description = "(Required) Base64 encoded public certificate used by the agent to do the initial handshake to the backend services in Azure."
   type        = string
@@ -42,6 +32,18 @@ variable "public_key" {
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
+
+variable "site_name" {
+  description = "(Optional) The name of the site"
+  default     = ""
+  type        = string
+}
+
+variable "environment" {
+  description = "(Optional) The environment of the site, possiblily value like: test/prod"
+  default     = ""
+  type        = string
+}
 
 # can't change in portal
 variable "kubernetes_version" {
